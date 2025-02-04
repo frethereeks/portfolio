@@ -1,0 +1,112 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// PORTFOLIO DETAILS
+
+enum PortContactStatus {
+  READ
+  UNREAD
+  DELETED
+}
+
+enum PortRole {
+  ROOT
+  ADMIN
+  USER
+}
+
+enum PortStatus {
+  PENDING
+  ACTIVE
+  SUSPENDED
+}
+
+model PortAdmin {
+  id        String     @id @default(cuid())
+  firstname String     @db.VarChar(50)
+  lastname  String     @db.VarChar(50)
+  image     String?    @db.LongText()
+  email     String     @unique @db.VarChar(100)
+  password  String     @db.VarChar(100)
+  status    PortStatus @default(PENDING)
+  role      PortRole   @default(USER)
+  token     String?    @db.VarChar(100)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  Project  PortProject[]
+  Category PortCategory[]
+
+  @@index([id])
+}
+
+model PortProject {
+  id          String   @id @default(cuid())
+  name        String   @db.VarChar(100)
+  slug        String   @db.VarChar(300)
+  link        String   @db.VarChar(100)
+  image       String   @db.LongText()
+  stack       String   @db.MediumText()
+  description String   @db.LongText()
+  featured    Boolean  @default(true)
+  visible     Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  categoryId String       @db.VarChar(50)
+  category   PortCategory @relation(fields: [categoryId], references: [id])
+  adminId    String       @db.VarChar(50)
+  Admin      PortAdmin    @relation(fields: [adminId], references: [id])
+
+  @@index([id])
+}
+
+model PortCategory {
+  id        String        @id @default(cuid())
+  name      String        @db.VarChar(100)
+  status    PortStatus    @default(ACTIVE)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  project   PortProject[]
+  adminId   String        @db.VarChar(50)
+  admin     PortAdmin     @relation(fields: [adminId], references: [id])
+
+  @@index([id])
+}
+
+model PortContact {
+  id        String            @id @default(cuid())
+  fullname  String            @db.VarChar(100)
+  email     String            @unique @db.VarChar(100)
+  phone     String            @db.VarChar(50)
+  message   String            @db.VarChar(160)
+  status    PortContactStatus @default(UNREAD)
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+
+  @@index([id])
+}
+
+model PortLogger {
+  id        String            @id @default(cuid())
+  message   String            @db.LongText()
+  email     String?           @db.VarChar(100)
+  userId    String?           @db.VarChar(50)
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+  status    PortContactStatus @default(UNREAD)
+
+  @@index([id])
+}
