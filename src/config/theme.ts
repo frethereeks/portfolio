@@ -13,11 +13,12 @@ const THEME_COLOR = {
     text: "#584455",
 }
 
-// const fontFamily = {
-//     eugusto: "var(--eugusto)",
-//     urbanist: "var(--urbanist)",
-//     inspiration: "var(--inspiration)",
-// }
+const fontFamily = {
+    eugusto: "var(--eugusto)",
+    mulish: "var(--mulish)",
+    urbanist: "var(--urbanist)",
+    inspiration: "var(--inspiration)",
+}
 
 export const appThemeConfig: ThemeConfig = {
     cssVar: true,
@@ -34,7 +35,7 @@ export const appThemeConfig: ThemeConfig = {
             siderBg: THEME_COLOR.text,
             headerBg: THEME_COLOR["light-secondary"],
             screenXS: 200,
-            fontFamily: "helvetica",
+            fontFamily: fontFamily.mulish,
             fontSize: 12,
         },
         Table: {
@@ -43,7 +44,7 @@ export const appThemeConfig: ThemeConfig = {
             rowHoverBg: THEME_COLOR["light-primary"],
             rowSelectedBg: THEME_COLOR["light-primary"],
             rowSelectedHoverBg: THEME_COLOR["lighter-primary"],
-            fontFamily: "arial",
+            fontFamily: fontFamily.mulish,
             // fontSizeLG: 16,
             // fontSizeSM: 12,
             fontSize: 12,

@@ -1,8 +1,8 @@
 "use client"
 
 import React, { useState } from 'react'
-// import { ASSETS_URL } from '@/constants'
-// import Image from 'next/image'
+import { ASSETS_URL } from '@/constants'
+import Image from 'next/image'
 import { useForm } from 'antd/es/form/Form'
 import { Button, Form, Input } from 'antd'
 import TextArea from 'antd/es/input/TextArea'
@@ -31,11 +31,11 @@ export default function ContactSection() {
   }
 
   return (
-    <section className='relative px-4 bg-milk dark:bg-primary py-20'>
-      {/* <Image src={ASSETS_URL['freds_photo_doc']} alt='freds_photo_doc' className='object-cover opacity-50' fill /> */}
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between gap-4">
-        <aside className="flex-1">
-          <h1 className="text-4xl md:text-6xl text-primary dark:text-milk font-bold w-full max-w-xl leading-loose">Let&apos;s talk <span className="font-black text-6xl md:text-7xl lg:text-8xl text-white dark:text-primary bg-milk dark:bg-milk py-0">Business</span> </h1>
+    <section className='relative px-4 bg-primary dark:bg-primary py-20'>
+      <Image src={ASSETS_URL['portfolio_php']} alt='portfolio_react' className='object-cover opacity-50 blur-sm' fill />
+      <div className="relative container mx-auto flex flex-col lg:flex-row justify-between gap-4">
+        <aside className="flex-1 relative z-10">
+          <h1 className="text-4xl md:text-6xl text-milk font-bold w-full max-w-xl leading-loose">Let&apos;s talk <span className="font-black text-6xl md:text-7xl lg:text-8xl text-white dark:text-secondary leading-none py-0">Business</span> </h1>
           <Form
             form={form}
             onFinish={(values) => {
@@ -43,27 +43,29 @@ export default function ContactSection() {
             }}
             className='relative max-w-lg mx-auto pt-10 pb-5 flex flex-col gap-4 mt-10'
           >
-            <Form.Item<TFormProps> name="fullname" rules={textValidationRules()}>
+            <Form.Item<TFormProps> noStyle name="fullname" rules={textValidationRules()}>
               <Input pattern='[A-Z][a-z]+\s[A-Z][a-z]+' required placeholder='Full Name (2 Names, First Letter Uppercase) e.g. Andrey Fredericks' className='' />
               <span className="hidden peer-placeholder-shown:flex text-xs text-white bg-danger p-2">Full Name Invalid. Must be 2 Names and first letter uppercase e.g. John Doe</span>
             </Form.Item>
-            <Form.Item<TFormProps> name="email" rules={emailValidationRules()}>
+            <Form.Item<TFormProps> noStyle name="email" rules={emailValidationRules()}>
               <Input type='email' required placeholder='Valid Email e.g. someone@email.com' />
             </Form.Item>
             <Form.Item<TFormProps> noStyle name="phone">
               <Input placeholder='Phone Number (optional)' />
             </Form.Item>
-            <Form.Item<TFormProps> noStyle name="phone" className='bg-white'>
-              <PhoneNumber
-                onChange={val => setPhone(val?.valueOf())}
-                flags={flags}
-                className='w-full'
-                defaultCountry='NG'
-                international
-                key={"802slksd034"}
-                countryCallingCodeEditable={false}
-                limitMaxLength={true}
-              />
+            <Form.Item<TFormProps> noStyle name="phone" className='bg-transparent'>
+              <div className="bg-white rounded-md p-1">
+                <PhoneNumber
+                  onChange={val => setPhone(val?.valueOf())}
+                  flags={flags}
+                  className='w-full p-1'
+                  defaultCountry='NG'
+                  international
+                  key={"802slksd034"}
+                  countryCallingCodeEditable={false}
+                  limitMaxLength={true}
+                />
+              </div>
             </Form.Item>
             <Form.Item<TFormProps> noStyle name="message">
               <TextArea maxLength={200} rows={10} required placeholder='Please, say something about the reason for this message...' />

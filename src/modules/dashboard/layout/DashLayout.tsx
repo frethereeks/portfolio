@@ -36,51 +36,23 @@ export default function DashLayout({ children, image }: { children: React.ReactN
     return (
         <main className='flex flex-col'>
             <Layout hasSider={openSideBar}>
-                <Sider
-                    breakpoint={"xl"}
-                    collapsible
-                    trigger={null}
-                    collapsedWidth={0}
-                    theme={"light"}
-                    collapsed={openSideBar}
-                    style={siderStyle}
-                    className='flex flex-col pt-4'
+                <Header
+                    style={{
+                        // position: 'sticky',
+                        top: 0,
+                        padding: 0,
+                        zIndex: 1,
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                    }}
                 >
-                    <div className="flex lg:justify-center items-center flex-shrink-0 relative after:absolute after:h-[.05rem] after:w-[90%] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:bg-slate-200 p-4">
-                        {/* <Link href={appRoutePaths.home} className='text-primary text-lg md:text-xl lg:text-2xl font-medium font-eugusto leading-none'>Fredericks<span className='text-secondary flex text-sm lg:text-base text-center md:tracking-tight uppercase -my-1 lg:-my-2'>Portfolio</span></Link> */}
-                        <Link href={appRoutePaths.home} className='text-primary text-xl md:text-2xl lg:text-3xl font-medium font-eugusto leading-none tracking-wide uppercase'>Fredericks <span className='bg-primary text-white grid place-items-center text-sm w-max text-center tracking-[.2rem] lg:tracking-[.55rem] uppercase -my-1 lg:-my-2 pl-1.5 md:pl-2.5'>PORTFIOLIO</span></Link>
-                    </div>
-                    <div className='sticky top-0 left-0 h-full p-4 bg-white flex-1 flex flex-col justify-between gap-10'>
-                        <div className="flex-1 flex flex-col">
-                            {
-                                sideBarLinks.map(el => (
-                                    <Link key={el.id} href={el.link} className={`button ${pathname.includes(el.link) ? "bg-primary text-white" : "bg-white text-primary"} flex justify-start items-center gap-2 py-2`}>
-                                        <span className="w-6 text-lg">{el.icon}</span>
-                                        <p className='text-base'>{el.title}</p>
-                                    </Link>
-                                ))
-                            }
+                    <div className="bg-white flex justify-between items-center gap-8 w-full p-4">
+                        <div className="flex lg:justify-center items-center flex-shrink-0 relative after:absolute after:h-[.05rem] after:w-[90%] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:bg-slate-200 p-4">
+                            {/* <Link href={appRoutePaths.home} className='text-primary text-lg md:text-xl lg:text-2xl font-medium font-eugusto leading-none'>Fredericks<span className='text-secondary flex text-sm lg:text-base text-center md:tracking-tight uppercase -my-1 lg:-my-2'>Portfolio</span></Link> */}
+                            <Link href={appRoutePaths.home} className='text-primary text-xl md:text-2xl lg:text-3xl font-medium font-eugusto leading-none tracking-wide uppercase'>Fredericks <span className='bg-primary text-white grid place-items-center text-sm w-max text-center tracking-[.2rem] lg:tracking-[.55rem] uppercase -my-1 lg:-my-2 pl-1.5 md:pl-2.5'>PORTFIOLIO</span></Link>
                         </div>
-                        <button onClick={handleLogout} className={`button sticky left-4 top-[90vh] bg-secondary text-white flex items-center gap-2 py-1.5`}>
-                            <span className="w-6 text-lg"><GrLogout /></span>
-                            <p className='text-base'>Logout</p>
-                        </button>
-                    </div>
-                </Sider>
-                <Layout style={{ marginInlineStart: openSideBar ? 0 : 200 }}>
-                    <Header
-                        style={{
-                            // position: 'sticky',
-                            top: 0,
-                            padding: 0,
-                            zIndex: 1,
-                            width: '100%',
-                            display: 'flex',
-                            alignItems: 'center',
-                        }}
-                    >
-                        <div className="bg-white flex justify-end gap-8 w-full p-4">
-                            {/* 
+                        {/* 
                             <form className="flex items-center gap-2 border-b-[2px] border-primary ml-52 w-full max-w-lg md:max-w-xl">
                                 <input type='search' placeholder='What would you like to eat?' className='flex-1 text-sm lg:text-sm border-transparent hover:border-transparent bg-transparent text-primary outline-none hover:outline-none' />
                                 <button type="submit" className='p-2'>
@@ -88,16 +60,45 @@ export default function DashLayout({ children, image }: { children: React.ReactN
                                 </button>
                             </form> 
                             */}
-                            {/* <button onClick={() => setOpenSidebar(!openSideBar)} className='group p-2 bg-secondary/20 hover:bg-primary text-primary hover:text-white text-xl rounded-md ml-auto mx-4'> 
+                        {/* <button onClick={() => setOpenSidebar(!openSideBar)} className='group p-2 bg-secondary/20 hover:bg-primary text-primary hover:text-white text-xl rounded-md ml-auto mx-4'> 
                             */}
-                            <div className="flex gap-2">
-                                {image}
-                                <button onClick={() => setOpenSidebar(prev => !prev)} className={`group py-0 px-2 bg-secondary hover:bg-secondary/80 text-white text-lg rounded-md ml-auto mx-4`}>
-                                    <LuText className={`${openSideBar ? 'scale-100' : '-scale-100'}`} />
-                                </button>
-                            </div>
+                        <div className="flex gap-2">
+                            {image}
+                            <button onClick={() => setOpenSidebar(prev => !prev)} className={`group py-0 px-2 bg-secondary hover:bg-secondary/80 text-white text-lg rounded-md ml-auto mx-4`}>
+                                <LuText className={`${openSideBar ? 'scale-100' : '-scale-100'}`} />
+                            </button>
                         </div>
-                    </Header>
+                    </div>
+                </Header>
+                <Layout style={{ marginInlineStart: openSideBar ? 0 : 200 }}>
+                    <Sider
+                        breakpoint={"xl"}
+                        collapsible
+                        trigger={null}
+                        collapsedWidth={0}
+                        theme={"light"}
+                        collapsed={openSideBar}
+                        style={siderStyle}
+                        className='flex flex-col pt-4'
+                    >
+                        
+                        <div className='sticky top-0 left-0 h-full p-4 bg-white flex-1 flex flex-col justify-between gap-10'>
+                            <div className="flex-1 flex flex-col">
+                                {
+                                    sideBarLinks.map(el => (
+                                        <Link key={el.id} href={el.link} className={`button ${pathname.includes(el.link) ? "bg-primary text-white" : "bg-white text-primary"} flex justify-start items-center gap-2 py-2`}>
+                                            <span className="w-6 text-lg">{el.icon}</span>
+                                            <p className='text-base'>{el.title}</p>
+                                        </Link>
+                                    ))
+                                }
+                            </div>
+                            <button onClick={handleLogout} className={`button sticky left-4 top-[90vh] bg-secondary text-white flex items-center gap-2 py-1.5`}>
+                                <span className="w-6 text-lg"><GrLogout /></span>
+                                <p className='text-base'>Logout</p>
+                            </button>
+                        </div>
+                    </Sider>
                     <Flex vertical className='w-full' style={{ paddingTop: 20 }}>
                         <Content style={{
                             margin: '14px 4px',

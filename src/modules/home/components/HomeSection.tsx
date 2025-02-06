@@ -9,10 +9,10 @@ export default function HomeSection() {
       <div className="container mx-auto flex flex-col justify-between gap-4">
         <aside className="flex flex-col sm:flex-row justify-between sm:items-start gap-4">
           <div className="flex-1">
-            <h1 className="text-4xl md:text-6xl text-primary dark:text-milk font-bold w-full max-w-xl leading-loose">I am a <span className="font-black flex w-max text-6xl md:text-7xl lg:text-8xl text-white dark:text-primary bg-milk dark:bg-milk py-0">Software</span> Developer</h1>
+            <h1 className="text-4xl md:text-6xl text-primary dark:text-milk font-bold w-full max-w-xl leading-loose">I am a <span className="font-bold flex w-max text-6xl md:text-7xl lg:text-8xl text-white dark:text-primary bg-milk dark:bg-milk py-0">Software</span> Developer</h1>
           </div>
           <div className="flex-1 flex flex-col justify-between gap-4 py-5">
-            <p className="text-default text-text dark:text-white/50 leading-loose w-full max-w-lg">Hi there, I am <span className="leading-none">software</span>, a software developer with Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, optio odio in quos, obcaecati eos eum voluptas ut distinctio quisquam nostrum quasi totam porro cupiditate nam qui quam dolorem earum.</p>
+            <p className="text-default text-text dark:text-white/50 leading-loose w-full max-w-lg">Hi there, I am a senior <span className="leading-none">software developer</span> with extensive experience in software development, infrastructure and architecture using in HTML, CSS, SaSS, TailwindCSS, Javascript, Typescript, React, NextJS, Vue, Nuxt, NodeJS, Laravel, PHP, MySQL, MongoDB, AWS, git, github, vercel, VPS, docker and many more.</p>
             <div className="flex justify-between gap-4">
               {
                 [

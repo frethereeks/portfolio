@@ -1,4 +1,4 @@
-import { BiLogoCss3, BiLogoDocker, BiLogoGithub, BiLogoHtml5, BiLogoJavascript, BiLogoMongodb, BiLogoNodejs, BiLogoPhp, BiLogoReact, BiLogoSass, BiLogoTailwindCss, BiLogoTypescript, BiLogoVuejs } from "react-icons/bi";
+import { BiLogoAws, BiLogoCss3, BiLogoDocker, BiLogoFigma, BiLogoFirebase, BiLogoGithub, BiLogoHtml5, BiLogoJavascript, BiLogoMongodb, BiLogoNodejs, BiLogoPhp, BiLogoPostgresql, BiLogoReact, BiLogoRedux, BiLogoSass, BiLogoTailwindCss, BiLogoTypescript, BiLogoVuejs } from "react-icons/bi";
 
 export type TSkillProps = {
     id: string;
@@ -80,27 +80,27 @@ export const skillsData: TSkillProps[] =
         },
         {
             id: "8239z6nzxa925392",
-            name: "Typescript",
-            icon: <BiLogoTailwindCss />
+            name: "AWS",
+            icon: <BiLogoAws />
         },
         {
             id: "8239z6nzxa925393",
-            name: "Typescript",
-            icon: <BiLogoTypescript />
+            name: "Figma",
+            icon: <BiLogoFigma />
         },
         {
             id: "8239z6nzxa925394",
-            name: "Typescript",
-            icon: <BiLogoTypescript />
+            name: "Firebase",
+            icon: <BiLogoFirebase />
         },
         {
             id: "8239z6nzxa925395",
-            name: "Typescript",
-            icon: <BiLogoTypescript />
+            name: "Postgresql",
+            icon: <BiLogoPostgresql />
         },
         {
             id: "8239z6nzxa925396",
-            name: "Typescript",
-            icon: <BiLogoTypescript />
+            name: "Redux",
+            icon: <BiLogoRedux />
         },
     ]

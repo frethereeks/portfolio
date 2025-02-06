@@ -1,5 +1,8 @@
+import { ASSETS_URL } from "@/constants";
+import { StaticImageData } from "next/image";
+
 type TImage = {
-    public_url: string
+    public_url: string | StaticImageData
     private_url?: string
 }
 
@@ -22,7 +25,7 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa9250",
             images: [
                 {
-                    public_url: "Tuwo_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "tuwo-chinkafa-black-soup",
@@ -38,7 +41,7 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa9251",
             images: [
                 {
-                    public_url: "Yam_image.jpg",
+                    public_url: ASSETS_URL["edimcs_one"],
                 }
             ],
             slug: "yam-egg-sauce",
@@ -54,11 +57,11 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa9252",
             images: [
                 {
-                    public_url: "Akpu_image.jpg",
+                    public_url: ASSETS_URL["karamlaza"],
                 }
             ],
-            slug: "akpu-white-soup",
-            name: "Akpu & White Soup",
+            slug: "karamlaza-interior-designs",
+            name: "Karamlaza Interior Designs",
             description: "White soup is a dish from the Eastern part of Nigeria. It is a rich-soup populated with assorted fish and meat components geared at enhancing the eating experience of whoever takes it on.",
             link: "https://akpu.netlify.app/",
             featured: false,
@@ -70,13 +73,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa9253",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["karamlaza"],
                 }
             ],
-            slug: "porridge-beans-friend-yam",
-            name: "Porridge Beans & Fried Yam",
+            slug: "karamlaza-interior-designs",
+            name: "Karamlaza Interior Designs",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -86,13 +89,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa92534",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["karamlaza"],
                 }
             ],
-            slug: "porridge-beans-friend-yam",
-            name: "Porridge Beans & Fried Yam1",
+            slug: "edimcs-digital-cooperative-designs",
+            name: "Edimcs Digital Cooperative",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -102,13 +105,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa92535",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam2",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -118,13 +121,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa92536",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam3",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -134,13 +137,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa92537",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam4",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -150,13 +153,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa92538",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam5",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -166,13 +169,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa92539",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam6",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -182,13 +185,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa925390",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam7",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -198,13 +201,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa925391",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam8",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -214,13 +217,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa925392",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam9",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -230,13 +233,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa925393",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam10",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -246,13 +249,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa925394",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam11",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -262,13 +265,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa925395",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam12",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],
@@ -278,13 +281,13 @@ export const projectData: TProjectProps[] =
             id: "8239z6nzxa925396",
             images: [
                 {
-                    public_url: "Rice_image.jpg",
+                    public_url: ASSETS_URL["edimcs"],
                 }
             ],
             slug: "porridge-beans-friend-yam",
             name: "Porridge Beans & Fried Yam13",
             description: "When it comes to a sure fire balanced diet, porridge beans, fried yam with a chilly pepper sauce has been known to bring out the best in people. For an experience of what cloud this combination can take you, try it out with us today.",
-            link: "https://porridge.netlify.app/",
+            link: "https://edimcs.vercel.app/",
             featured: false,
             visible: true,
             stack: ["NextJS", "Tailwind", "Redux Toolkit", "NodeJS", "MySQL"],

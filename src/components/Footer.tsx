@@ -7,7 +7,7 @@ import { IoLogoFacebook, IoLogoInstagram, IoLogoTwitter, IoLogoYoutube } from 'r
 
 export default function Footer() {
   return (
-    <footer className='bg-slate-100 dark:bg-primary p-4'>
+    <footer className='bg-slate-100 dark:bg-primary p-4 relative z-20'>
       <div className="container mx-auto relative flex justify-between gap-4 md:gap-10 text-text">
         <p className="text-small text-text dark:text-milk">&copy;Copyright {new Date().getFullYear()}. Fredericks Portfolio. All rights reserved.</p>
         <div className="flex gap-4 text-base md:text-base opacity-90">

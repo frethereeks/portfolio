@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Urbanist, Inspiration } from "next/font/google"
+import { Urbanist, Inspiration, Mulish } from "next/font/google"
 import localFont from "next/font/local";
 import "../globals.css";
 import { Toaster } from "react-hot-toast"
@@ -11,6 +11,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 export const eugusto = localFont({ src: "../../fonts/Eugusto.otf", variable: "--eugusto", weight: "100 900", });
 export const urbanist = Urbanist({ subsets: ["latin"], variable: "--urbanist", weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], fallback: ["cursive"] });
 export const inspiration = Inspiration({ subsets: ["latin"], variable: "--inspiration", weight: "400", fallback: ["Helvetica", "Arial", "sans-serif"] });
+export const mulish = Mulish({ subsets: ["latin"], variable: "--mulish", weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"], fallback: ["Helvetica", "Arial", "sans-serif"] });
 
 export const metadata: Metadata = {
   title: "Frethericks Portfolio",
@@ -26,14 +27,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${eugusto.variable} ${inspiration.variable} ${urbanist.variable} antialiased font-urbanist`}
+        className={`${eugusto.variable} ${mulish.variable} ${inspiration.variable} ${urbanist.variable} antialiased font-urbanist`}
       >
         <Provider>
           <AntdRegistry>
             {/*AntdRegistry prevents flicker on the page for antd */}
               <Toaster />
             <ThemeProvider>
-              <div className="font-urbanist min-h-[80vh] bg-background dark:bg-primary">
+              <div className="font-mulish min-h-[80vh] bg-background dark:bg-primary">
                 {children}
               </div>
               <Footer />

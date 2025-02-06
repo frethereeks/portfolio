@@ -17,8 +17,8 @@ export default {
       },
       colors: {
         dark: "#2a2a28",
-        // primary: "#382a33",
-        primary: "#3e3a2d",
+        primary: "#382a33",
+        // primary: "#3e3a2d",
         // secondary: "#ee791d",
         // secondary: "#2563eb",
         secondary: "#aba695",

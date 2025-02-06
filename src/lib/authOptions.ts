@@ -9,7 +9,7 @@ import prisma from '@/lib/prisma';
 import bcryptjs from "bcryptjs"
 
 export const authOptions: NextAuthOptions = {
-    debug: true,
+    // debug: true,
     providers: [
         CredentialsProvider({
             name: 'Sign in',

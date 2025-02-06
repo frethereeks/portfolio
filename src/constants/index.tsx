@@ -1,4 +1,4 @@
-import { freds_photo, freds_photo_doc, young_me } from "@/assets"
+import { edimcs, edimcs_one, freds_photo_doc, freds_photo, karamlaza, karamlaza_one, portfolio_cmd, portfolio_css, portfolio_js, portfolio_php, portfolio_phparray, portfolio_react, young_me, } from "@/assets"
 import { IoLogoFacebook, IoLogoInstagram, IoLogoLinkedin, IoLogoWhatsapp, IoLogoYoutube } from "react-icons/io5"
 
 /**
@@ -6,9 +6,19 @@ import { IoLogoFacebook, IoLogoInstagram, IoLogoLinkedin, IoLogoWhatsapp, IoLogo
  * This is a list of assets (images, icons and media) the site will be filled with
  */
 export const ASSETS_URL = {
-    freds_photo, 
-    freds_photo_doc, 
-    young_me
+    edimcs,
+    edimcs_one,
+    freds_photo_doc,
+    freds_photo,
+    karamlaza,
+    karamlaza_one,
+    portfolio_cmd,
+    portfolio_css,
+    portfolio_js,
+    portfolio_php,
+    portfolio_phparray,
+    portfolio_react,
+    young_me,
 }
 
 export const DEFAULT_PAGE_SIZE = 6

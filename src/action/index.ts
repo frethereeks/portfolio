@@ -23,10 +23,10 @@ export const fetchUser = async () => {
             email: user?.email?.toLowerCase() as string
         },
     })
-    // if (!data) {
-    //     signOut()
-    //     redirect(appRoutePaths.signin)
-    // }
+    if (!data) {
+        signOut()
+        redirect(appRoutePaths.signin)
+    }
     return data;
 }
 
@@ -52,7 +52,7 @@ const projectData = (data: FormData) => ({
     link: data?.get("link")?.valueOf() as string,
     image: data?.get("image")?.valueOf() as string,
     popular: data?.get("popular")?.valueOf() as boolean,
-    status: data?.get("status")?.valueOf() as $Enums.PortStatus,
+    // status: data?.get("status")?.valueOf() as $Enums.PortStatus,
     description: data?.get("description")?.valueOf() as string,
     categoryId: data?.get("categoryId")?.valueOf() as string,
     visible: data?.get("visible")?.valueOf() as boolean,
@@ -106,7 +106,7 @@ export const createCategory = async (data: FormData) => {
     try {
         await prisma.portCategory.create({
             data: {
-                name, adminId: user?.id!
+                name, adminId: user.id
             }
         })
         return { error: false, message: `New Category Created Successfully.`, }
@@ -155,7 +155,7 @@ export const createProject = async (data: FormData) => {
     try {
         await prisma.portProject.create({
             data: {
-                name, slug, link, image, description, categoryId, adminId: user?.id!, visible, featured, stack, 
+                name, slug, link, image, description, categoryId, adminId: user.id, visible, featured, stack, 
             }
         })
         revalidatePath(appRoutePaths.adminproject)
@@ -498,7 +498,7 @@ export const updateContact = async (data: FormData) => {
 export const updateProject = async (data: FormData) => {
     const user = await fetchUser()
     const id = data?.get("id")?.valueOf() as string
-    const { name, featured, link, stack, visible, image, description, categoryId, status } = projectData(data)
+    const { name, featured, link, stack, visible, image, description, categoryId } = projectData(data)
     const slug = generateSlug(name)
     // check duplicates
     const alreadyExists = await prisma.portProject.findFirst({
@@ -515,7 +515,7 @@ export const updateProject = async (data: FormData) => {
     try {
         await prisma.portProject.update({
             data: {
-                name, slug, featured, link, stack, visible, image, description, categoryId, adminId: user?.id!,
+                name, slug, featured, link, stack, visible, image, description, categoryId, adminId: user.id,
             },
             where: { id }
         })

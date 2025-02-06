@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { TProjectProps } from '@/data/projectData'
+import Image from 'next/image'
 
 export default function ProjectCard({ name, images, link, stack, type }: TProjectProps) {
   console.log({images})
@@ -9,7 +10,9 @@ export default function ProjectCard({ name, images, link, stack, type }: TProjec
       <Link href={link} className='flex flex-col' target="_blank" rel="noopener noreferrer">
         <div className="p-1.5 sm:p-3 relative rounded-xl overflow-hidden">
           <div className="h-full w-full absolute top-0 left-0 blur-sm rounded-xl bg-milk dark:bg-milk/10"></div>
-          <figure className='py-20 md:py-40 relative bg-text dark:bg-white/50 rounded-lg'></figure>
+          <figure className='py-20 md:py-40 relative bg-text dark:bg-white/50 rounded-lg'>
+            <Image src={images[0].public_url} alt={images[0].public_url.toString()} className='object-cover' fill />
+          </figure>
         </div>
         <div className="flex-1 flex flex-col p-2 sm:p-4">
           <p className="text-[.6rem] sm:text-xs text-text/70 dark:text-white/50">{stack.join(",")} • {type}</p>
